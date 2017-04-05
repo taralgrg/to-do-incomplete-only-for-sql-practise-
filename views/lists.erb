@@ -5,7 +5,6 @@
 
     <ul>
       <% @lists.each() do |list| %>
-        <!-- <li><a href="/lists/<%= list.id()%>"><%= list.name() %></a> </li> -->
         <li>
           <a href="/lists/<%=list.id()%>"><%= list.name() %></a>
         </li>

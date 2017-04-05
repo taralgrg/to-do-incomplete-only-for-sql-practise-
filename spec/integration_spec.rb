@@ -6,22 +6,11 @@ require('capybara/rspec')
   describe('adding a viewing new list', {:type => :feature}) do
     it('allows a user to add/view a list to see the tasks and details for it') do
       visit('/')
-      # click_link('Add New List')
       fill_in('name', :with =>'Moringaschool Work')
       click_button('Add New List')
       expect(page).to have_content('Moringaschool Work')
     end
   end
-
-  # describe('viewing all of the lists', {:type => :feature}) do
-  #   it('allows a user to see all of the lists that have been created') do
-  #     list = List.new({:name => 'Moringaschool Homework', :id => nil})
-  #     list.save()
-  #     visit('/')
-  #     click_link('View All Lists')
-  #     expect(page).to have_content(list.name)
-  #   end
-  # end
 
   describe('seeing details for a single list', {:type => :feature}) do
     it('allows a user to click a list to see the tasks and details for it') do
