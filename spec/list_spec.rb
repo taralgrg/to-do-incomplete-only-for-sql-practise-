@@ -70,4 +70,13 @@ require("spec_helper")
       expect(test_list.tasks()).to(eq([test_task, test_task2]))
     end
   end
+
+  describe("#update") do
+    it("lets you update lists in the database") do
+      test_list = List.new({:name => "Moringa School stuff", :id => nil})
+      test_list.save()
+      test_list.update({:name => "Homework stuff"})
+      expect(test_list.name()).to(eq("Homework stuff"))
+    end
+  end
 end
